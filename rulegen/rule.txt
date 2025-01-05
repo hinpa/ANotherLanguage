@@ -1,0 +1,11 @@
+
+Binary:Expression:IExprVisitor; std::unique_ptr<Expression> left RVAL; Token tok; std::unique_ptr<Expression> right RVAL;
+Grouping:Expression:IExprVisitor; std::unique_ptr<Expression> expr RVAL;
+Literal:Expression:IExprVisitor; Token tok;
+Unary:Expression:IExprVisitor; Token tok; std::unique_ptr<Expression> expr RVAL;
+Assignment:Expression:IExprVisitor; Token name; std::unique_ptr<Expression> expr RVAL;
+
+ExpressionStmt:Stmt:IStmtVisitor; std::unique_ptr<Expression> expr RVAL;
+PrintStmt:Stmt:IStmtVisitor; std::unique_ptr<Expression> expr RVAL;
+VarStmt:Stmt:IStmtVisitor; Token tok; std::unique_ptr<Expression> expr RVAL;
+Var:Expression:IExprVisitor; Token name;
