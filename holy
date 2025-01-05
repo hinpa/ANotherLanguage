@@ -1,0 +1,3 @@
+short i = 1.2;
+long s = i;
+print(i);
